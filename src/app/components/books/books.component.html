@@ -1,0 +1,31 @@
+<div class="container p-5">
+    <div class="row">
+        <!-- form for insert data -->
+        <div class="col-md-5">
+            <div class="card">
+                <div class="card-header">
+                    <h4><b>Book</b></h4>
+                </div>
+                <div class="card-body">
+                    <form autocomplete="off" #form="ngForm" (submit)="OnSubmit(form)">
+                        <input type="hidden" name="Id" #Id="ngModel" [(ngModel)] = "books_service.formData.Id">
+                        <div class="form-group">
+                            <input type="text" name="BookCode" #BookCode="ngModel" [(ngModel)] ="books_service.formData.BookCode" class="form-control" placeholder="Book Code" required>
+                        </div><br>
+                        <div class="form-group">
+                            <input type="text" name="BookName" #BookName="ngModel" [(ngModel)] ="books_service.formData.BookName" class="form-control" placeholder="Book Name" required>
+                        </div><br>
+                        <div class="form-group">
+                            <input type="text" name="BookCount" #BookCount="ngModel" [(ngModel)] ="books_service.formData.BookCount" class="form-control" placeholder="Book Count" required>
+                        </div><br>
+                        <div class="form-group">
+                            <button class="btn btn-primary" type="submit" [disabled]="form.invalid">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- table for view books -->
+        <div class="col-md-7"></div>
+    </div>
+</div>
